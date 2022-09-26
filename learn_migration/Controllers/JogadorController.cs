@@ -22,5 +22,25 @@ namespace learn_migration.Controllers
         {
             return Ok(await _context.TbJogadors.ToListAsync());
         }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> Create([FromBody] TbJogador jogador)
+        {
+
+            _context.TbJogadors.Add(jogador);
+            _context.SaveChanges();
+            return Ok(await _context.TbJogadors.ToListAsync());
+
+        }
+
+        
+
+
+
+
+
+
     }
 }

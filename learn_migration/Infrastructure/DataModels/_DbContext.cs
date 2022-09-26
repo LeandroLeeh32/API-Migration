@@ -97,10 +97,6 @@ namespace learn_migration.Infrastructure.DataModels
             {
                 entity.ToTable("tb_jogador");
 
-                entity.Property(e => e.Id)
-                    .ValueGeneratedNever()
-                    .HasColumnName("id");
-
                 entity.Property(e => e.DataNasc).HasColumnName("data_nasc");
 
                 entity.Property(e => e.Nome)
